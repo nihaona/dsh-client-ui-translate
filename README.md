@@ -37,7 +37,7 @@ row; the browser module system then serves `lib/client.js` under
 
 `lib/` is prebuilt with DSH's own tsdown client preset, which lives in the DSH
 source checkout, so a rebuild must run through it. From a DSH checkout
-(`D:\deepseek-harness`):
+(`<DSH source checkout>`):
 
 1. Temporarily place this package's `src/`, `tsconfig.json`, `tsdown.config.ts`
    and a repo-shaped `package.json` under `packages/client/ui-translate`.
