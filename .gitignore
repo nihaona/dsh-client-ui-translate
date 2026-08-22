@@ -1,0 +1,8 @@
+# Dependencies and build cache (never shipped)
+node_modules/
+*.tsbuildinfo
+*.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

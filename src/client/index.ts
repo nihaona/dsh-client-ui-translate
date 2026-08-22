@@ -1,0 +1,47 @@
+/**
+ * Translation panel plugin, browser half: the `translate` dictionaries and
+ * TranslatePanel registered into the layout-owned `shell.overlay` list slot.
+ * The overlay is the additive frame-wide seat, so this entry joins beside the
+ * shipped ones without touching the three-column frame. Export discipline:
+ * packages/client/AGENTS.md.
+ */
+import type { ClientContext } from '@deepseek-ai/dsh-client-runtime/client'
+// Type-only: pulls the locale plugin's Context merge (ctx.locale).
+import type {} from '@deepseek-ai/dsh-client-locale/client'
+import { TranslatePanel } from './TranslatePanel.tsx'
+import { en, zh, type TranslateKey } from './locales.ts'
+
+export type { TranslatePanelProps } from './contract/slots.ts'
+export type { TranslateKey } from './locales.ts'
+export {
+  LANGUAGES, TranslateFailure, chunkText, detectLanguage, translateText,
+  type LangCode, type LanguageOption, type ResolvedLang, type TranslateFailureKind,
+} from './translate.ts'
+
+declare module '@deepseek-ai/dsh-client-ui-slots' {
+  interface LocaleNamespaceMap {
+    /** The translation panel's copy. */
+    translate: TranslateKey
+  }
+}
+
+/** Dictionary namespace owned by this plugin. */
+const NS = 'translate'
+
+/** Required services: the slot registry and the panel's copy. */
+export const inject = ['slots', 'locale']
+
+/**
+ * Client plugin body: register the `translate` dictionaries and the panel
+ * entry. One contribution into the overlay list slot; the entry owns all its
+ * state, so no store and no injected face are declared.
+ * @param ctx - client root context.
+ */
+export function apply(ctx: ClientContext): void {
+  ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'ui-translate: dictionaries')
+
+  ctx.slots.inject('shell.overlay', () => ctx.slots.register(
+    { name: 'shell.overlay', id: 'translate', locale: NS },
+    TranslatePanel,
+  ))
+}

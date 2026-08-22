@@ -1,0 +1,6 @@
+# dsh-client-ui-translate compositor patch. When this package is added to a
+# profile's `dsh.profile.bundles`, its rows are applied after the other bundle
+# layers; the single row below composes the browser-side translation plugin.
+- insert:
+    - id: ui-translate
+      name: '@deepseek-ai/dsh-client-ui-translate'

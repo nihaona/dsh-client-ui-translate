@@ -1,0 +1,86 @@
+/** `translate` namespace dictionaries: translation panel copy (product copy is Chinese). */
+/** Simplified Chinese dictionary (the key-set source of truth). */
+export declare const zh: {
+    'panel.title': string;
+    'panel.toggle': string;
+    'panel.close': string;
+    'panel.result': string;
+    'source.label': string;
+    'target.label': string;
+    'swap.label': string;
+    'input.placeholder': string;
+    'action.translate': string;
+    'action.copy': string;
+    'action.copied': string;
+    busy: string;
+    'output.placeholder': string;
+    'error.empty': string;
+    'error.network': string;
+    'error.api': string;
+    'error.quota': string;
+    'lang.auto': string;
+    'lang.zh-CN': string;
+    'lang.zh-TW': string;
+    'lang.en': string;
+    'lang.ja': string;
+    'lang.ko': string;
+    'lang.fr': string;
+    'lang.de': string;
+    'lang.es': string;
+    'lang.ru': string;
+    'lang.it': string;
+    'lang.pt-BR': string;
+    'lang.ar': string;
+    'lang.th': string;
+    'lang.vi': string;
+    'lang.id': string;
+    'lang.tr': string;
+    'lang.nl': string;
+    'lang.pl': string;
+    'lang.uk': string;
+    'lang.hi': string;
+};
+/** The translate namespace key union. */
+export type TranslateKey = keyof typeof zh;
+/** English dictionary, checked complete against the zh key set. */
+export declare const en: {
+    'panel.title': string;
+    'panel.toggle': string;
+    'panel.close': string;
+    'panel.result': string;
+    'source.label': string;
+    'target.label': string;
+    'swap.label': string;
+    'input.placeholder': string;
+    'action.translate': string;
+    'action.copy': string;
+    'action.copied': string;
+    busy: string;
+    'output.placeholder': string;
+    'error.empty': string;
+    'error.network': string;
+    'error.api': string;
+    'error.quota': string;
+    'lang.auto': string;
+    'lang.zh-CN': string;
+    'lang.zh-TW': string;
+    'lang.en': string;
+    'lang.ja': string;
+    'lang.ko': string;
+    'lang.fr': string;
+    'lang.de': string;
+    'lang.es': string;
+    'lang.ru': string;
+    'lang.it': string;
+    'lang.pt-BR': string;
+    'lang.ar': string;
+    'lang.th': string;
+    'lang.vi': string;
+    'lang.id': string;
+    'lang.tr': string;
+    'lang.nl': string;
+    'lang.pl': string;
+    'lang.uk': string;
+    'lang.hi': string;
+};
+//# sourceMappingURL=locales.d.ts.map
